@@ -17,20 +17,28 @@ type NoinputController struct {
 
 func (this *MainController) Get() {
 	this.Data["Website"] = "hummel.yt"
+
 	statuscode, url := retrieveaudio.Get(this.Ctx.Input.Param(":channelname"))
 	if statuscode == 0 {
 		this.Data["channelresult"] = 0
 		this.TplNames = "failure.tpl"
+		this.Layout = "failure.tpl"
 	} else if statuscode == 1 {
 		this.Data["channelresult"] = 1
 		this.Data["resulturl"] = url
 		this.TplNames = "success.tpl"
+		this.Layout = "success.tpl"
 	}
+	this.LayoutSections = make(map[string]string)
+	this.LayoutSections["Gascript"] = "ga_script.tpl"
 }
 
 func (this *NoinputController) Get() {
-	this.TplNames = "noinput.tpl"
 	this.Data["Website"] = "hummel.yt"
+	this.Layout = "noinput.tpl"
+	this.TplNames = "noinput.tpl"
+	this.LayoutSections = make(map[string]string)
+	this.LayoutSections["Gascript"] = "ga_script.tpl"
 }
 
 

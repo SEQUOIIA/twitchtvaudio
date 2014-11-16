@@ -5,7 +5,7 @@
     	<title>Twitch audio-only</title>
     	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta http-equiv="refresh" content="0; url={{.resulturl}}" />
-
+        {{.Gascript}}
 		<style type="text/css">
 			body {
 				margin: 0px;
