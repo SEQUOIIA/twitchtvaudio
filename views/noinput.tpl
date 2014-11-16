@@ -4,7 +4,7 @@
   	<head>
     	<title>Twitch audio-only</title>
     	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
+        {{.Gascript}}
 		<style type="text/css">
 			body {
 				margin: 0px;
