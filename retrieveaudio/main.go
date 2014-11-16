@@ -59,7 +59,8 @@ func Get(channelname string) (int, string) {
 
 	p, listType, err := m3u8.DecodeFrom(bufio.NewReader(resp.Body), true)
 	if err != nil {
-		panic(err)
+		//panic(err)
+		return 0, "no go"
 	}
 	switch listType {
 	case m3u8.MEDIA:
