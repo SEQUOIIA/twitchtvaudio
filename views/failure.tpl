@@ -73,10 +73,8 @@
 			</div>
 			</div>
 		</header>
-    <div style="padding-left: 50px">
-        <pre>
-        Couldn't find any audio-only streams for the channel.
-        </pre>
+    <div style="font-size: 2em; padding-top: 0.2em; margin-left: auto; margin-right: auto; text-align: center; line-height: 2em;">
+      <h1>Couldn't find any audio-only streams for the channel.</h1>
     </div>
 	</body>
 </html>

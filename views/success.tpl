@@ -74,9 +74,9 @@
 			</div>
 			</div>
 		</header>
-    <div style="font-size: 5em; padding-top: 0.2em; margin-left: auto; margin-right: auto; width: 12.3em; text-align: center;">
+    <div style="font-size: 5em; padding-top: 0.2em; margin-left: auto; margin-right: auto; text-align: center; line-height: 1.5em;">
         <h1>Success!</h1>
-        <p style="padding-top: 1em;">
+        <p>
         Opening stream right away!
         </p>
     </div>
