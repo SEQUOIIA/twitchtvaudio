@@ -40,8 +40,16 @@
                         encode 		: true,
                         success: function(data)
                         {
-                            $('#twitchresponse').empty()
-                            $('#twitchresponse').append('<p><a href="' + data.Url + '">Click here</a></p>')
+                            if (data.Statuscode == 0) {
+                                $('#twitchresponse').empty()
+                                $('#twitchresponse').append('<p style="color: rgba(255, 0, 0, 0.61)">' + "Can't find audio-only stream.</p>")
+                            }
+
+                            if (data.Statuscode == 1) {
+                                $('#twitchresponse').empty()
+                                $('#twitchresponse').append('<p><a style="text-decoration: none; color: rgba(133, 228, 16, 0.74);" href="' + data.Url + '">Click here</a></p>')
+                            }
+
                         //    $('#twitchresponse').replace('<p>URL: ' + data.Url + '</p>')
                         }
                     })
@@ -155,7 +163,7 @@
 			</div>
 		</header>
     <div id="stuff">
-        <p style="margin-left: auto; margin-right: auto; text-align: center; font-size: 3em; line-height: 1.2em">Oi, you forgot to put a channel name after the URL!</p>
+  <!--      <p style="margin-left: auto; margin-right: auto; text-align: center; font-size: 3em; line-height: 1.2em">Oi, you forgot to put a channel name after the URL!</p> -->
         <form action="http://192.168.0.133:8089/api/twitch" method="POST">
             <div id="name-group" class="form-group" style="margin-left: auto; margin-right: auto; width: 13em">
                 <label for="channelname">Channel</label>
@@ -165,7 +173,7 @@
             <div style="margin-left: auto; margin-right: auto; width: 1em">
             <button type="submit" class="btn btn-success">Submit <span class="fa fa-arrow-right"></span></button>
             </div>
-            <div id="twitchresponse" style="text-align: center; font-size: 3em; color:rgba(166, 142, 210, 0.76); padding-top: 0.6em"></div>
+            <div id="twitchresponse" style="text-align: center; font-size: 3em; padding-top: 0.6em;"></div>
         </form>
     </div>
 	</body>
