@@ -7,6 +7,7 @@ import (
 
 func init() {
     beego.Router("/:channelname", &controllers.MainController{})
+	beego.Router("/get", &controllers.MainAlternativeController{})
 	beego.Router("/", &controllers.NoinputController{})
 	beego.Router("/api/twitch", &controllers.ApiController{})
 }

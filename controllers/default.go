@@ -12,6 +12,9 @@ type MainController struct {
 	beego.Controller
 }
 
+type MainAlternativeController struct {
+	beego.Controller
+}
 
 type NoinputController struct {
 	beego.Controller
@@ -55,7 +58,32 @@ func (this *MainController) Get() {
 		this.Data["resulturl"] = url
 		this.TplNames = "success.tpl"
 	}
+	currentcommit, err := exec.Command("git", "rev-parse", "--short",  "HEAD").Output()
+	if err != nil {
+		fmt.Println(err)
+	}
+	this.Data["Version"] = string(currentcommit)
 }
+
+func (this *MainAlternativeController) Get() {
+	this.Data["Website"] = "hummel.yt"
+
+	statuscode, url := retrieveaudio.Get(this.GetString("channelname"))
+	if statuscode == 0 {
+		this.Data["channelresult"] = 0
+		this.TplNames = "failure.tpl"
+	} else if statuscode == 1 {
+		this.Data["channelresult"] = 1
+		this.Data["resulturl"] = url
+		this.TplNames = "success.tpl"
+	}
+	currentcommit, err := exec.Command("git", "rev-parse", "--short",  "HEAD").Output()
+	if err != nil {
+		fmt.Println(err)
+	}
+	this.Data["Version"] = string(currentcommit)
+}
+
 
 func (this *NoinputController) Get() {
 	this.Data["Website"] = "hummel.yt"
