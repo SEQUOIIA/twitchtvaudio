@@ -135,16 +135,16 @@
 			}
 
 			.description {
-				padding-top: 5px;
+				padding-top: 0px;
 				padding-left: 5px;
 				font-size: 18px;
 				font-weight: 200;
-				line-height: 30px;
+				line-height: 25px;
 				color: inherit;
 			}
 
 			p {
-				margin: 0px 0px 10px;
+				margin: 0px 0px 0px;
 			}
 		</style>
 	</head>
@@ -157,6 +157,8 @@
 			    <h1>Twitch audio-only retriever</h1>
 			    <p class="description">
                     Developer: <a href="https://github.com/equoia">Sequoia</a>
+                    <br>
+                    Version: <a href="https://github.com/equoia/twitchtvaudio/commits/master">{{.Version}}</a>
 			    </p>
 			  </div>
 			</div>
@@ -175,6 +177,7 @@
             </div>
             <div id="twitchresponse" style="text-align: center; font-size: 3em; padding-top: 0.6em;"></div>
         </form>
+
     </div>
 	</body>
 </html>

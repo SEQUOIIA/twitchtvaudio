@@ -4,6 +4,8 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/equoia/twitchtvaudio/retrieveaudio"
 	"github.com/equoia/twitchtvaudio/models"
+	"os/exec"
+	"fmt"
 )
 
 type MainController struct {
@@ -58,6 +60,11 @@ func (this *MainController) Get() {
 func (this *NoinputController) Get() {
 	this.Data["Website"] = "hummel.yt"
 	this.TplNames = "noinput.tpl"
+	currentcommit, err := exec.Command("git", "rev-parse", "--short",  "HEAD").Output()
+	if err != nil {
+		fmt.Println(err)
+	}
+	this.Data["Version"] = string(currentcommit)
 }
 
 
