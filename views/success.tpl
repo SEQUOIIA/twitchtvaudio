@@ -71,7 +71,7 @@
 	</head>
 
   	<body>
-  		<header class="hero-unit" style="background-color:#A9F16C">
+  		<header class="hero-unit" style="background-color:rgba(166, 142, 210, 0.76)">
 			<div class="container">
 			<div class="row">
 			  <div class="hero-text" style="margin-left: 3em">
