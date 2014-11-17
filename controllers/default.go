@@ -19,12 +19,27 @@ type ApiController struct {
 	beego.Controller
 }
 
-func (u *ApiController) Get() {
-	content := models.GetAudiostream(u.Ctx.Input.Param(":channelname"))
+type Channelnamepost struct {
+	Channelname	string	`json:"channelname"`
+}
+
+/*
+func (u *ApiController) Post() {
+	var channelnamepost Channelnamepost
+	//var channelnamepost map[string]interface{}
+	json.Unmarshal(u.Ctx.Input.RequestBody, &channelnamepost)
+	content := models.GetAudiostream(channelnamepost.Channelname)
 	u.Data["json"] = content
 	u.ServeJson()
 }
+*/
 
+func (u *ApiController) Post() {
+	//var channelnamepost map[string]interface{}
+	content := models.GetAudiostream(u.GetString("channelname"))
+	u.Data["json"] = content
+	u.ServeJson()
+}
 
 func (this *MainController) Get() {
 	this.Data["Website"] = "hummel.yt"
