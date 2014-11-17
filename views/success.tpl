@@ -83,10 +83,12 @@
 			</div>
 			</div>
 		</header>
-    <div style="font-size: 5em; padding-top: 0.2em; margin-left: auto; margin-right: auto; text-align: center; line-height: 1.5em;">
-        <h1>Success!</h1>
-        <p>
-        Opening stream right away!
+    <div style="padding-top: 0.2em; margin-left: auto; margin-right: auto; text-align: center; line-height: 1.5em;">
+        <h1 style="font-size: 5em">Success!</h1>
+        <p style="font-size: 5em; padding-top: 0.2em; line-height: 1em;">
+        Opening stream right away!</p>
+        <p style="font-size: 0.9em; padding-top: 0.5em;">
+        <span>If it doesn't start to download/stream automatically, you can use <a href="{{.resulturl}}">this link</a> instead</span>
         </p>
     </div>
 	</body>
