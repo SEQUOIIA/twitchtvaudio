@@ -3,6 +3,7 @@ package controllers
 import (
 	"github.com/astaxie/beego"
 	"github.com/equoia/twitchtvaudio/retrieveaudio"
+	"github.com/equoia/twitchtvaudio/models"
 )
 
 type MainController struct {
@@ -12,6 +13,16 @@ type MainController struct {
 
 type NoinputController struct {
 	beego.Controller
+}
+
+type ApiController struct {
+	beego.Controller
+}
+
+func (u *ApiController) Get() {
+	content := models.GetAudiostream(u.Ctx.Input.Param(":channelname"))
+	u.Data["json"] = content
+	u.ServeJson()
 }
 
 
