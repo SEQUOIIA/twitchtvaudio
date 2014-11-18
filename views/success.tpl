@@ -67,6 +67,16 @@
             p {
                 margin: 0px 0px 0px;
             }
+
+            #title {
+                color: #333;
+                text-decoration: none;
+            }
+
+            #title:hover {
+                text-decoration: none;
+                color: rgb(84, 83, 83);
+            }
 		</style>
 	</head>
 
