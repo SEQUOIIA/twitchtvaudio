@@ -10,4 +10,5 @@ func init() {
 	beego.Router("/get", &controllers.MainAlternativeController{})
 	beego.Router("/", &controllers.NoinputController{})
 	beego.Router("/api/twitch", &controllers.ApiController{})
+	beego.SetStaticPath("/css", "views/css")
 }

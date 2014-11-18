@@ -4,6 +4,7 @@
   	<head>
     	<title>Twitch audio-only</title>
     	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -74,7 +75,7 @@
 			<div class="container">
 			<div class="row">
 			  <div class="hero-text" style="margin-left: 3em">
-			    <h1>Twitch audio-only retriever</h1>
+                  <a id="title" href="https://letr.it/twitchaudio"><h1>Twitch audio-only retriever</h1></a>
 			    <p class="description">
                     Developer: <a href="https://github.com/equoia">Sequoia</a>
                     <br>
