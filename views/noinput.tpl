@@ -14,7 +14,6 @@
             ga('send', 'pageview');
 
         </script>
-        <link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
         <!--<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
 
 		<style type="text/css">
@@ -69,6 +68,16 @@
 			p {
 				margin: 0px 0px 0px;
 			}
+
+            #title {
+                color: #333;
+                text-decoration: none;
+            }
+
+            #title:hover {
+                text-decoration: none;
+                color: rgb(84, 83, 83);
+            }
 		</style>
 	</head>
 
