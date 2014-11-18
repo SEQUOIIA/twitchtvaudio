@@ -86,6 +86,18 @@
 		</header>
     <div style="font-size: 2em; padding-top: 0.2em; margin-left: auto; margin-right: auto; text-align: center; line-height: 2em; color: rgba(255, 0, 0, 0.61);">
       <h1>Can't find audio-only stream</h1>
+
     </div>
+    <form action="/get" method="GET">
+            <div id="name-group" class="form-group" style="margin-left: auto; margin-right: auto; width: 13em">
+                <label for="channelname">Channel</label>
+                <input type="text" class="form-control" name="channelname" placeholder="totalbiscuit">
+                <!-- errors will go here -->
+            </div>
+            <div style="margin-left: auto; margin-right: auto; width: 1em">
+            <button type="submit" class="btn btn-success">Submit <span class="fa fa-arrow-right"></span></button>
+            </div>
+            <div id="twitchresponse" style="text-align: center; font-size: 3em; padding-top: 0.6em;"></div>
+        </form>
 	</body>
 </html>

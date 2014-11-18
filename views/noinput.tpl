@@ -88,7 +88,7 @@
 		</header>
     <div id="stuff">
   <!--      <p style="margin-left: auto; margin-right: auto; text-align: center; font-size: 3em; line-height: 1.2em">Oi, you forgot to put a channel name after the URL!</p> -->
-        <form action="http://192.168.0.133:8089/get" method="GET">
+        <form action="/get" method="GET">
             <div id="name-group" class="form-group" style="margin-left: auto; margin-right: auto; width: 13em">
                 <label for="channelname">Channel</label>
                 <input type="text" class="form-control" name="channelname" placeholder="totalbiscuit">
