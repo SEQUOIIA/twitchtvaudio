@@ -6,6 +6,7 @@ import (
 	"github.com/equoia/twitchtvaudio/models"
 	"os/exec"
 	"fmt"
+	"strings"
 )
 
 type MainController struct {
@@ -48,8 +49,8 @@ func (u *ApiController) Post() {
 
 func (this *MainController) Get() {
 	this.Data["Website"] = "hummel.yt"
-
-	statuscode, url := retrieveaudio.Get(this.Ctx.Input.Param(":channelname"))
+	lowercasedchannelname := strings.ToLower(this.Ctx.Input.Param(":channelname"))
+	statuscode, url := retrieveaudio.Get(lowercasedchannelname)
 	if statuscode == 0 {
 		this.Data["channelresult"] = 0
 		this.TplNames = "failure.tpl"
@@ -67,8 +68,8 @@ func (this *MainController) Get() {
 
 func (this *MainAlternativeController) Get() {
 	this.Data["Website"] = "hummel.yt"
-
-	statuscode, url := retrieveaudio.Get(this.GetString("channelname"))
+	lowercasedchannelname := strings.ToLower(this.GetString("channelname"))
+	statuscode, url := retrieveaudio.Get(lowercasedchannelname)
 	if statuscode == 0 {
 		this.Data["channelresult"] = 0
 		this.TplNames = "failure.tpl"

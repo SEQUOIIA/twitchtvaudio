@@ -14,7 +14,8 @@
             ga('send', 'pageview');
 
         </script>
-        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
+        <!--<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
 
 		<style type="text/css">
 			body {
@@ -76,8 +77,8 @@
 			<div class="container">
 			<div class="row">
 			  <div class="hero-text" style="margin-left: 3em">
-			    <h1>Twitch audio-only retriever</h1>
-			    <p class="description">
+                  <a id="title" href="https://letr.it/twitchaudio"><h1>Twitch audio-only retriever</h1></a>
+                  <p class="description">
                     Developer: <a href="https://github.com/equoia">Sequoia</a>
                     <br>
                     Version: <a href="https://github.com/equoia/twitchtvaudio/commits/master">{{.Version}}</a>
@@ -88,7 +89,7 @@
 		</header>
     <div id="stuff">
   <!--      <p style="margin-left: auto; margin-right: auto; text-align: center; font-size: 3em; line-height: 1.2em">Oi, you forgot to put a channel name after the URL!</p> -->
-        <form action="http://192.168.0.133:8089/get" method="GET">
+        <form action="/get" method="GET">
             <div id="name-group" class="form-group" style="margin-left: auto; margin-right: auto; width: 13em">
                 <label for="channelname">Channel</label>
                 <input type="text" class="form-control" name="channelname" placeholder="totalbiscuit">
