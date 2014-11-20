@@ -4,7 +4,7 @@
 
 section {
   padding-top: 1em;
-  @include center(50%);
+  @include center(100%);
 }
 
 header {
@@ -38,7 +38,33 @@ body {
 }
 
 #title {
-  @include column(.80);
+  @include column(2/4, 1/4);
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  font-size: 2em;
+}
+
+#searchform {
+  //padding-top: 1em;
+  width: 12em;
+  margin: 0 auto;
+}
+
+#searchform .input {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: transparent;
+  border-width: medium medium 1px;
+  border-style: none none solid;
+  border-top: medium none;
+  border-right: medium none;
+  border-left: medium none;
+  border-radius: 0px;
+  font-weight: 300;
+  font-family: "aktiv-grotesk-std",sans-serif;
+  color: #FFF;
+  outline: medium none;
 }
 
 footer {
@@ -53,6 +79,8 @@ footer p {
   top: 20%;
   position: relative;
   @include center(100%);
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
 }
 
 @media only screen and (max-width: 400px) {

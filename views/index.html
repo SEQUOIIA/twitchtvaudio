@@ -2,6 +2,7 @@
 
 <head>
     <link rel="stylesheet" href="css/main.css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <header>
 <span id="headertitle">Twitch Audio-only retriever</span>
@@ -9,9 +10,20 @@
 <body>
     <section>
         <div id="content">
-           <span id="title">Look up stream</span>
-           <span id="searchbar">Search bar</span>
+           <span id="title">Look up live stream</span>
+           <br>
+            <form action="/get" method="GET">
+                <div id="searchform">
+                    <input type="text" class="input" name="channelname" placeholder="totalbiscuit" autofocus>
+                    <!-- errors will go here -->
+
+                    <button type="submit" class="btn btn-success" style="border: none; background-color: transparent;">
+                        <i class="fa fa-search fa-lg"></i>
+                    </button>
+
         </div>
+       </form>
+       </div>
     </section>
 </body>
 <footer>

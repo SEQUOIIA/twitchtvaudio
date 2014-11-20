@@ -135,7 +135,7 @@ section {
   padding-top: 1em;
   *zoom: 1;
   width: auto;
-  max-width: 50%;
+  max-width: 100%;
   float: none;
   display: block;
   margin-right: auto;
@@ -191,9 +191,13 @@ body {
   float: left;
   clear: none;
   text-align: inherit;
-  width: 79.4%;
-  margin-left: 0%;
-  margin-right: 3%; }
+  width: 48.5%;
+  margin-left: 25.75%;
+  margin-right: 3%;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  font-size: 2em; }
   #title:before, #title:after {
     content: '';
     display: table; }
@@ -201,6 +205,25 @@ body {
     clear: both; }
   #title:last-child {
     margin-right: 0%; }
+
+#searchform {
+  width: 12em;
+  margin: 0 auto; }
+
+#searchform .input {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: transparent;
+  border-width: medium medium 1px;
+  border-style: none none solid;
+  border-top: medium none;
+  border-right: medium none;
+  border-left: medium none;
+  border-radius: 0px;
+  font-weight: 300;
+  font-family: "aktiv-grotesk-std",sans-serif;
+  color: #FFF;
+  outline: medium none; }
 
 footer {
   position: absolute;
@@ -220,7 +243,9 @@ footer p {
   margin-right: auto;
   margin-left: auto;
   padding-left: 0;
-  padding-right: 0; }
+  padding-right: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #333; }
   footer p:before, footer p:after {
     content: '';
     display: table; }
