@@ -20,9 +20,9 @@ header span {
 
 #headertitle {
   text-align: center;
-  font-size: 180%;
+  font-size: 240%;
   position: relative;
-  top: 30%;
+  top: 26%;
   color: rgba(166, 142, 210, 0.76);
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
@@ -42,12 +42,12 @@ body {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   color: #333;
-  font-size: 2em;
+  font-size: 3em;
 }
 
 #searchform {
   //padding-top: 1em;
-  width: 12em;
+  width: 21em;
   margin: 0 auto;
 }
 
@@ -55,7 +55,7 @@ body {
   padding-top: 5px;
   padding-bottom: 5px;
   background-color: transparent;
-  border-width: medium medium 1px;
+  border-width: medium medium 3px;
   border-style: none none solid;
   border-top: medium none;
   border-right: medium none;
@@ -65,6 +65,15 @@ body {
   font-family: "aktiv-grotesk-std",sans-serif;
   color: #FFF;
   outline: medium none;
+  width: 26em;
+}
+
+.fa-search {
+  color: #FFF;
+}
+
+.fa-search:hover {
+  color: #b9b9b9 !important;
 }
 
 footer {
@@ -88,4 +97,149 @@ footer p {
     font-size: 130%;
     top: 35%;
   }
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+  #headertitle {
+    font-size: 5.9vw;
+    top: 24%;
+  }
+
+  header {
+    height: 9.9vw;
+  }
+
+  #title {
+    @include column(4/4);
+    font-size: 8.9vw;
+    text-align: center;
+  }
+
+  #searchform {
+    //padding-top: 1em;
+    padding-top: 2em;
+    width: 58.9vw;
+  }
+
+  #searchform .input {
+    width: 46.9vw;
+  }
+
+}
+
+@media only screen and (min-device-width : 481px) and (max-device-width : 641px) {
+
+  #headertitle {
+    font-size: 5.9vw;
+    top: 26%;
+  }
+
+  header {
+    height: 9.9vw;
+  }
+
+  #title {
+    @include column(4/4);
+    font-size: 8.9vw;
+    text-align: center;
+  }
+
+  #searchform {
+    //padding-top: 1em;
+    padding-top: 2em;
+    width: 56.9vw;
+  }
+
+  #searchform .input {
+    width: 46.9vw;
+  }
+
+}
+
+@media only screen and (min-device-width : 642px) and (max-device-width : 802px) {
+
+  #headertitle {
+    font-size: 5.9vw;
+    top: 30%;
+  }
+
+  header {
+    height: 9.9vw;
+  }
+
+  #title {
+    @include column(4/4);
+    font-size: 8.9vw;
+    text-align: center;
+  }
+
+  #searchform {
+    //padding-top: 1em;
+    padding-top: 2em;
+    width: 52.9vw;
+  }
+
+  #searchform .input {
+    width: 46.9vw;
+  }
+
+}
+
+@media only screen and (min-device-width : 803px) and (max-device-width : 963px) {
+
+  #headertitle {
+    font-size: 5.9vw;
+    top: 30%;
+  }
+
+  header {
+    height: 9.9vw;
+  }
+
+  #title {
+    @include column(4/4);
+    font-size: 8.9vw;
+    text-align: center;
+  }
+
+  #searchform {
+    //padding-top: 1em;
+    padding-top: 2em;
+    width: 52.9vw;
+  }
+
+  #searchform .input {
+    width: 46.9vw;
+  }
+
+}
+
+@media only screen and (min-device-width : 964px) and (max-device-width : 1124px) {
+
+  #headertitle {
+    font-size: 5.9vw;
+    top: 30%;
+  }
+
+  header {
+    height: 9.9vw;
+  }
+
+  #title {
+    @include column(4/4);
+    font-size: 8.9vw;
+    text-align: center;
+  }
+
+  #searchform {
+    //padding-top: 1em;
+    padding-top: 2em;
+    width: 50.9vw;
+  }
+
+  #searchform .input {
+    width: 46.9vw;
+  }
+
 }
