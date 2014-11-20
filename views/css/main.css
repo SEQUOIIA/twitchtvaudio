@@ -206,6 +206,67 @@ body {
   #title:last-child {
     margin-right: 0%; }
 
+#title2 {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 48.5%;
+  margin-left: 25.75%;
+  margin-right: 3%;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  font-size: 3em; }
+  #title2:before, #title2:after {
+    content: '';
+    display: table; }
+  #title2:after {
+    clear: both; }
+  #title2:last-child {
+    margin-right: 0%; }
+
+#subtext {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 48.5%;
+  margin-left: 25.75%;
+  margin-right: 3%;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  padding-top: 1em;
+  font-size: 0.7em; }
+  #subtext:before, #subtext:after {
+    content: '';
+    display: table; }
+  #subtext:after {
+    clear: both; }
+  #subtext:last-child {
+    margin-right: 0%; }
+
+#titleerror {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 48.5%;
+  margin-left: 25.75%;
+  margin-right: 3%;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  font-size: 3em; }
+  #titleerror:before, #titleerror:after {
+    content: '';
+    display: table; }
+  #titleerror:after {
+    clear: both; }
+  #titleerror:last-child {
+    margin-right: 0%; }
+
 #searchform {
   width: 21em;
   margin: 0 auto; }
@@ -289,6 +350,60 @@ footer p {
     #title:last-child {
       margin-right: 0%; }
 
+  #title2 {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
+    font-size: 7.9vw;
+    text-align: center; }
+    #title2:before, #title2:after {
+      content: '';
+      display: table; }
+    #title2:after {
+      clear: both; }
+    #title2:last-child {
+      margin-right: 0%; }
+
+  #subtext {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
+    font-size: 1.7vw;
+    text-align: center; }
+    #subtext:before, #subtext:after {
+      content: '';
+      display: table; }
+    #subtext:after {
+      clear: both; }
+    #subtext:last-child {
+      margin-right: 0%; }
+
+  #titleerror {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
+    font-size: 6.9vw;
+    text-align: center; }
+    #titleerror:before, #titleerror:after {
+      content: '';
+      display: table; }
+    #titleerror:after {
+      clear: both; }
+    #titleerror:last-child {
+      margin-right: 0%; }
+
   #searchform {
     padding-top: 2em;
     width: 58.9vw; }
@@ -319,6 +434,60 @@ footer p {
     #title:after {
       clear: both; }
     #title:last-child {
+      margin-right: 0%; }
+
+  #title2 {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
+    font-size: 7.9vw;
+    text-align: center; }
+    #title2:before, #title2:after {
+      content: '';
+      display: table; }
+    #title2:after {
+      clear: both; }
+    #title2:last-child {
+      margin-right: 0%; }
+
+  #subtext {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
+    font-size: 1.7vw;
+    text-align: center; }
+    #subtext:before, #subtext:after {
+      content: '';
+      display: table; }
+    #subtext:after {
+      clear: both; }
+    #subtext:last-child {
+      margin-right: 0%; }
+
+  #titleerror {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
+    font-size: 6.9vw;
+    text-align: center; }
+    #titleerror:before, #titleerror:after {
+      content: '';
+      display: table; }
+    #titleerror:after {
+      clear: both; }
+    #titleerror:last-child {
       margin-right: 0%; }
 
   #searchform {
@@ -353,6 +522,60 @@ footer p {
     #title:last-child {
       margin-right: 0%; }
 
+  #title2 {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
+    font-size: 7.9vw;
+    text-align: center; }
+    #title2:before, #title2:after {
+      content: '';
+      display: table; }
+    #title2:after {
+      clear: both; }
+    #title2:last-child {
+      margin-right: 0%; }
+
+  #subtext {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
+    font-size: 1.7vw;
+    text-align: center; }
+    #subtext:before, #subtext:after {
+      content: '';
+      display: table; }
+    #subtext:after {
+      clear: both; }
+    #subtext:last-child {
+      margin-right: 0%; }
+
+  #titleerror {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
+    font-size: 6.9vw;
+    text-align: center; }
+    #titleerror:before, #titleerror:after {
+      content: '';
+      display: table; }
+    #titleerror:after {
+      clear: both; }
+    #titleerror:last-child {
+      margin-right: 0%; }
+
   #searchform {
     padding-top: 2em;
     width: 52.9vw; }
@@ -385,9 +608,64 @@ footer p {
     #title:last-child {
       margin-right: 0%; }
 
+  #title2 {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
+    font-size: 7.9vw;
+    text-align: center; }
+    #title2:before, #title2:after {
+      content: '';
+      display: table; }
+    #title2:after {
+      clear: both; }
+    #title2:last-child {
+      margin-right: 0%; }
+
+  #subtext {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
+    font-size: 1.7vw;
+    text-align: center; }
+    #subtext:before, #subtext:after {
+      content: '';
+      display: table; }
+    #subtext:after {
+      clear: both; }
+    #subtext:last-child {
+      margin-right: 0%; }
+
+  #titleerror {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
+    font-size: 6.9vw;
+    text-align: center; }
+    #titleerror:before, #titleerror:after {
+      content: '';
+      display: table; }
+    #titleerror:after {
+      clear: both; }
+    #titleerror:last-child {
+      margin-right: 0%; }
+
   #searchform {
     padding-top: 2em;
-    width: 52.9vw; }
+    width: 52.9vw;
+    padding-left: 2em; }
 
   #searchform .input {
     width: 46.9vw; } }
@@ -417,9 +695,69 @@ footer p {
     #title:last-child {
       margin-right: 0%; }
 
+  #title2 {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
+    font-size: 7.9vw;
+    text-align: center; }
+    #title2:before, #title2:after {
+      content: '';
+      display: table; }
+    #title2:after {
+      clear: both; }
+    #title2:last-child {
+      margin-right: 0%; }
+
+  #subtext {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
+    font-size: 1.7vw;
+    text-align: center; }
+    #subtext:before, #subtext:after {
+      content: '';
+      display: table; }
+    #subtext:after {
+      clear: both; }
+    #subtext:last-child {
+      margin-right: 0%; }
+
+  #titleerror {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
+    font-size: 6.9vw;
+    text-align: center; }
+    #titleerror:before, #titleerror:after {
+      content: '';
+      display: table; }
+    #titleerror:after {
+      clear: both; }
+    #titleerror:last-child {
+      margin-right: 0%; }
+
   #searchform {
     padding-top: 2em;
-    width: 50.9vw; }
+    padding-left: 2em;
+    width: 50.9vw;
+    position: absolute;
+    transform-style: preserve-3d;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
 
   #searchform .input {
     width: 46.9vw; } }

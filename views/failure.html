@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<header>
+<span id="headertitle">Twitch Audio-only retriever</span>
+</header>
+<body>
+    <section>
+        <div id="content">
+           <span id="titleerror" style="color: rgba(255, 43, 18, 0.53);">Can't find audio-only stream</span>
+           <br>
+            <form action="/get" method="GET">
+                <div id="searchform">
+                    <input type="text" class="input" name="channelname" placeholder="totalbiscuit" autofocus>
+                    <!-- errors will go here -->
+
+                    <button type="submit" class="btn btn-success" style="border: none; background-color: transparent;">
+                        <i class="fa fa-search fa-lg" id="searchicon"></i>
+                    </button>
+
+        </div>
+       </form>
+       </div>
+    </section>
+</body>
+<footer>
+    <p>Built by Sequoia | Version: twitchaudio985c962</p>
+</footer>
+</html>

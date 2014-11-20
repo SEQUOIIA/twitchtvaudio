@@ -45,6 +45,31 @@ body {
   font-size: 3em;
 }
 
+#title2 {
+  @include column(2/4, 1/4);
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  font-size: 3em;
+}
+
+#subtext {
+  @include column(2/4, 1/4);
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  padding-top: 1em;
+  font-size: 0.7em;
+}
+
+#titleerror {
+  @include column(2/4, 1/4);
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  font-size: 3em;
+}
+
 #searchform {
   //padding-top: 1em;
   width: 21em;
@@ -116,6 +141,24 @@ footer p {
     text-align: center;
   }
 
+  #title2 {
+    @include column(4/4);
+    font-size: 7.9vw;
+    text-align: center;
+  }
+
+  #subtext {
+    @include column(4/4);
+    font-size: 1.7vw;
+    text-align: center;
+  }
+
+  #titleerror {
+    @include column(4/4);
+    font-size: 6.9vw;
+    text-align: center;
+  }
+
   #searchform {
     //padding-top: 1em;
     padding-top: 2em;
@@ -142,6 +185,24 @@ footer p {
   #title {
     @include column(4/4);
     font-size: 8.9vw;
+    text-align: center;
+  }
+
+  #title2 {
+    @include column(4/4);
+    font-size: 7.9vw;
+    text-align: center;
+  }
+
+  #subtext {
+    @include column(4/4);
+    font-size: 1.7vw;
+    text-align: center;
+  }
+
+  #titleerror {
+    @include column(4/4);
+    font-size: 6.9vw;
     text-align: center;
   }
 
@@ -174,6 +235,24 @@ footer p {
     text-align: center;
   }
 
+  #title2 {
+    @include column(4/4);
+    font-size: 7.9vw;
+    text-align: center;
+  }
+
+  #subtext {
+    @include column(4/4);
+    font-size: 1.7vw;
+    text-align: center;
+  }
+
+  #titleerror {
+    @include column(4/4);
+    font-size: 6.9vw;
+    text-align: center;
+  }
+
   #searchform {
     //padding-top: 1em;
     padding-top: 2em;
@@ -203,10 +282,29 @@ footer p {
     text-align: center;
   }
 
+  #title2 {
+    @include column(4/4);
+    font-size: 7.9vw;
+    text-align: center;
+  }
+
+  #subtext {
+    @include column(4/4);
+    font-size: 1.7vw;
+    text-align: center;
+  }
+
+  #titleerror {
+    @include column(4/4);
+    font-size: 6.9vw;
+    text-align: center;
+  }
+
   #searchform {
     //padding-top: 1em;
     padding-top: 2em;
     width: 52.9vw;
+    padding-left: 2em;
   }
 
   #searchform .input {
@@ -232,10 +330,30 @@ footer p {
     text-align: center;
   }
 
+  #title2 {
+    @include column(4/4);
+    font-size: 7.9vw;
+    text-align: center;
+  }
+
+  #subtext {
+    @include column(4/4);
+    font-size: 1.7vw;
+    text-align: center;
+  }
+
+  #titleerror {
+    @include column(4/4);
+    font-size: 6.9vw;
+    text-align: center;
+  }
+
   #searchform {
     //padding-top: 1em;
     padding-top: 2em;
+    padding-left: 2em;
     width: 50.9vw;
+    @include align(both)
   }
 
   #searchform .input {
