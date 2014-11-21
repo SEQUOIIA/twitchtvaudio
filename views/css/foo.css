@@ -14,14 +14,14 @@ h1 {
 section {
   *zoom: 1;
   width: auto;
-  max-width: 80%;
+  max-width: 100%;
   float: none;
   display: block;
   margin-right: auto;
   margin-left: auto;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 2em;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 1em;
 }
 section:before,
 section:after {
@@ -229,11 +229,64 @@ footer p:after {
 footer p:after {
   clear: both;
 }
+.titleerror {
+  color: rgba(255,43,18,0.53);
+  font-size: 1.5em;
+  text-align: center;
+  *zoom: 1;
+  width: auto;
+  max-width: 100%;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+.titleerror:before,
+.titleerror:after {
+  content: '';
+  display: table;
+}
+.titleerror:after {
+  clear: both;
+}
+#title {
+  font-size: 8.9vw;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+}
+#title2 {
+  font-size: 7.6vw;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+#subtext {
+  font-size: 1.7vw;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  padding-top: 1em;
+}
 @media (min-width: 700px) {
   h1 {
     font-size: 3em;
   }
   header {
     height: 4em;
+  }
+  .titleerror {
+    font-size: 4vw;
+  }
+  #title {
+    font-size: 3em;
+  }
+  #title2 {
+    font-size: 3em;
+  }
+  #subtext {
+    font-size: 0.7em;
+  }
+  section {
+    padding-top: 2em;
   }
 }
