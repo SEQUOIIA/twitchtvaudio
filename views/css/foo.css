@@ -178,6 +178,10 @@ aside a {
 .searchbar:after {
   clear: both;
 }
+.searchbar ::-webkit-input-placeholder {
+  color: #fff;
+  opacity: 0.5;
+}
 .searchbar input {
   width: 100%;
   height: 1.4em;
@@ -194,13 +198,12 @@ aside a {
   color: #fff;
   outline: medium none;
   text-align: center;
-  text-emphasis-color: #fff;
 }
 footer {
   position: absolute;
   bottom: 0px;
   width: 100%;
-  height: 60px;
+  height: 40px;
 }
 footer p {
   text-align: center;
