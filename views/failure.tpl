@@ -22,7 +22,8 @@
 </header>
 <body>
 <section>
-    <span class="titleerror">Can't find audio-only stream</span>
+
+    <span class="titleerror">{{.channelresult}}</span>
     <div class="searchbar">
         <form action="/get" method="GET">
             <div id="searchform">
