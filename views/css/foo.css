@@ -1,6 +1,6 @@
 @import 'reset.css';
 h1 {
-  font-size: 7.7vw;
+  font-size: 7.0vw;
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
 }
@@ -42,7 +42,7 @@ header {
 }
 header h1 {
   text-align: center;
-  line-height: 1.4em;
+  line-height: 1.3em;
 }
 aside {
   display: block;
