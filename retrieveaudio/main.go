@@ -39,7 +39,7 @@ func Get(channelname string) (int, string) {
 		fmt.Println("Something went wrong with the JSON:\n", err)
 	}
 
-	m3u8url := "http://usher.twitch.tv/select/" + channelname + ".json?nauthsig=" + accesstoken.Sig + "&nauth=" + accesstoken.Token +"&allow_source=true&allow_audio_only=true"
+	m3u8url := "http://usher.twitch.tv/api/channel/hls/" + channelname + ".m3u8?sig=" + accesstoken.Sig + "&token=" + accesstoken.Token +"&allow_source=true&allow_audio_only=true"
 	req, err = http.NewRequest("GET", m3u8url, nil)
 	if err != nil {
 		fmt.Println(err)
