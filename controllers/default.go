@@ -52,15 +52,12 @@ func (this *MainController) Get() {
 	lowercasedchannelname := strings.ToLower(this.Ctx.Input.Param(":channelname"))
 	statuscode, url := retrieveaudio.Get(lowercasedchannelname)
 	if statuscode == 0 {
-		this.Data["channelresult"] = "Can't find audio-only stream"
+		this.Data["channelresult"] = 0
 		this.TplNames = "failure.tpl"
 	} else if statuscode == 1 {
 		this.Data["channelresult"] = 1
 		this.Data["resulturl"] = url
 		this.TplNames = "success.tpl"
-	} else if statuscode == 2 {
-		this.Data["channelresult"] = "Something is wrong with the Twitch API server"
-		this.TplNames = "failure.tpl"
 	}
 	currentcommit, err := exec.Command("git", "rev-parse", "--short",  "HEAD").Output()
 	if err != nil {
@@ -74,15 +71,12 @@ func (this *MainAlternativeController) Get() {
 	lowercasedchannelname := strings.ToLower(this.GetString("channelname"))
 	statuscode, url := retrieveaudio.Get(lowercasedchannelname)
 	if statuscode == 0 {
-		this.Data["channelresult"] = "Can't find audio-only stream"
+		this.Data["channelresult"] = 0
 		this.TplNames = "failure.tpl"
 	} else if statuscode == 1 {
 		this.Data["channelresult"] = 1
 		this.Data["resulturl"] = url
 		this.TplNames = "success.tpl"
-	} else if statuscode == 2 {
-		this.Data["channelresult"] = "Something is wrong with the Twitch API server"
-		this.TplNames = "failure.tpl"
 	}
 	currentcommit, err := exec.Command("git", "rev-parse", "--short",  "HEAD").Output()
 	if err != nil {

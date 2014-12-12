@@ -53,10 +53,7 @@ func Get(channelname string) (int, string) {
 	}
 	defer resp.Body.Close()
 
-	if resp.StatusCode == 404 {
-		fmt.Println("Something is wrong with the Twitch API server.")
-		return 2, "Error at Twitch API server"
-	}
+	//tempbody, err = ioutil.ReadAll(resp.Body)
 
 	//allstreamsraw := string(tempbody)
 
