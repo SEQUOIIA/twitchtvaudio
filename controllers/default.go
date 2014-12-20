@@ -48,7 +48,6 @@ func (u *ApiController) Post() {
 }
 
 func (this *MainController) Get() {
-	this.Data["Website"] = "hummel.yt"
 	lowercasedchannelname := strings.ToLower(this.Ctx.Input.Param(":channelname"))
 	statuscode, url := retrieveaudio.Get(lowercasedchannelname)
 	if statuscode == 0 {
@@ -67,7 +66,6 @@ func (this *MainController) Get() {
 }
 
 func (this *MainAlternativeController) Get() {
-	this.Data["Website"] = "hummel.yt"
 	lowercasedchannelname := strings.ToLower(this.GetString("channelname"))
 	statuscode, url := retrieveaudio.Get(lowercasedchannelname)
 	if statuscode == 0 {
@@ -87,7 +85,6 @@ func (this *MainAlternativeController) Get() {
 
 
 func (this *NoinputController) Get() {
-	this.Data["Website"] = "hummel.yt"
 	this.TplNames = "noinput.tpl"
 	currentcommit, err := exec.Command("git", "rev-parse", "--short",  "HEAD").Output()
 	if err != nil {
@@ -95,53 +92,3 @@ func (this *NoinputController) Get() {
 	}
 	this.Data["Version"] = string(currentcommit)
 }
-
-
-/*
-func (this *CvrController) Get() {
-	this.TplNames = "cvr.tpl"
-	this.Data["Website"] = "hummel.yt"
-
-	virksomheddata := cvr.Get(this.Ctx.Input.Param(":cvr_nr"))
-	var virksomhed Virksomhed
-	err := json.Unmarshal(virksomheddata, &virksomhed)
-	if err != nil {
-		fmt.Println("There was an error:", err)
-	}
-
-	this.Data["virksomhed"] = virksomhed
-}
-
-
-func (this *TwitchController) Get() {
-	this.TplNames = "twitch.tpl"
-	this.Data["Website"] = "hummel.yt"
-
-	url := "https://api.twitch.tv/api/videos/a" + this.Ctx.Input.Param(":vod_id") + ".json"
-
-	res, err := http.Get(url)
-
-	if err != nil {
-		panic(err.Error())
-	}
-
-	body, err := ioutil.ReadAll(res.Body)
-
-	if err != nil {
-		panic(err.Error())
-	}
-
-	var data Twitchvodjson
-	json.Unmarshal(body, &data)
-
-	vodurls := ""
-
-	for _, vod := range data.Chunks.Live.Url {
-		fmt.Println(vod)
-		//vodurls = +vod
-	}
-
-	this.Data["Channel"] = vodurls
-
-}
-*/
