@@ -2,14 +2,14 @@ package controllers
 
 import (
 	"github.com/equoia/twitchtvaudio/retrieveaudio"
-	"os/exec"
-	"fmt"
 	"strings"
 	"net/http"
 	"github.com/GeertJohan/go.rice"
 	"html/template"
 	"github.com/gorilla/mux"
 )
+
+var Version string
 
 func HttpHeaderSet(w http.ResponseWriter, r *http.Request, next http.HandlerFunc) {
 	w.Header().Set("Server", "github.com/equoia/twitchtvaudio 1.0")
@@ -18,12 +18,7 @@ func HttpHeaderSet(w http.ResponseWriter, r *http.Request, next http.HandlerFunc
 
 func Root(w http.ResponseWriter, r *http.Request) {
 	ctx := make(map[string]interface{})
-
-	currentcommit, err := exec.Command("git", "rev-parse", "--short",  "HEAD").Output()
-	if err != nil {
-		fmt.Println(err)
-	}
-	ctx["version"] = string(currentcommit)
+	ctx["version"] = Version
 
 	templateBox, err := rice.FindBox("../views")
 	if err != nil {
@@ -52,11 +47,7 @@ func GetChannel(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 
-	currentcommit, err := exec.Command("git", "rev-parse", "--short",  "HEAD").Output()
-	if err != nil {
-		fmt.Println(err)
-	}
-	ctx["Version"] = string(currentcommit)
+	ctx["version"] = Version
 
 	lowercasedchannelname := strings.ToLower(vars["channelname"])
 	statuscode, url := retrieveaudio.Get(lowercasedchannelname)
@@ -99,12 +90,8 @@ func GetChannelAlternative(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		panic(err)
 	}
-
-	currentcommit, err := exec.Command("git", "rev-parse", "--short",  "HEAD").Output()
-	if err != nil {
-		fmt.Println(err)
-	}
-	ctx["Version"] = string(currentcommit)
+	
+	ctx["version"] = Version
 
 	lowercasedchannelname := strings.ToLower(channelname)
 	statuscode, url := retrieveaudio.Get(lowercasedchannelname)
