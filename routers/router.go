@@ -2,7 +2,6 @@ package routers
 
 import (
 	"github.com/equoia/twitchtvaudio/controllers"
-	//"github.com/astaxie/beego"
 	"github.com/gorilla/mux"
 	"github.com/codegangsta/negroni"
 	"net/http"
@@ -16,15 +15,16 @@ func init() {
 		negroni.Wrap(http.HandlerFunc(controllers.Root)),
 	))
 
+	Router.Handle("/get", negroni.New(
+		negroni.Wrap(http.HandlerFunc(controllers.GetChannelAlternative)),
+	))
+
+	Router.Handle("/{channelname}", negroni.New(
+		negroni.Wrap(http.HandlerFunc(controllers.GetChannel)),
+	))
+
+
 
 	cssfileServer := http.StripPrefix("/css/", http.FileServer(rice.MustFindBox("../views/css").HTTPBox()))
 	Router.PathPrefix("/css/").Handler(cssfileServer)
-
-	/*
-    beego.Router("/:channelname", &controllers.MainController{})
-	beego.Router("/get", &controllers.MainAlternativeController{})
-	beego.Router("/", &controllers.NoinputController{})
-	beego.Router("/api/twitch", &controllers.ApiController{})
-	beego.SetStaticPath("/css", "views/css")
-	*/
 }
