@@ -24,7 +24,7 @@
 <section>
     <span class="titleerror">Can't find audio-only stream</span>
     <div class="searchbar">
-        <form action="/get" method="GET">
+        <form action="get" method="GET">
             <div id="searchform">
                 <input type="text" class="input" name="channelname" placeholder="Channel" autofocus>
                 <!-- errors will go here -->

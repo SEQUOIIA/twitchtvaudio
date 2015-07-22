@@ -23,7 +23,7 @@
 <body>
 <section>
     <div class="searchbar">
-        <form action="/get" method="GET">
+        <form action="get" method="GET">
             <div id="searchform">
                 <input type="text" class="input" name="channelname" placeholder="Channel" autofocus>
                 <!-- errors will go here -->

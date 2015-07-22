@@ -180,3 +180,21 @@ func GetM3U8andRewrite(w http.ResponseWriter, r *http.Request) {
 
 	}
 }
+
+func M3U8Stream(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+
+	var tmpbody string = `#EXTM3U
+#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID="audio_only",NAME="Audio Only",AUTOSELECT=YES,DEFAULT=YES
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=128000,CODECS="mp4a.40.2",VIDEO="audio_only"`
+
+	lines := strings.Split(string(tmpbody), "\n")
+	url := "https://letr.it/twitchaudio/audiobits/" + vars["channelname"] + ".m3u8"
+	lines = append(lines, url)
+
+	output := strings.Join(lines, "\n")
+
+	w.Header().Set("Content-Type", "application/vnd.apple.mpegurl")
+	w.WriteHeader(200)
+	w.Write([]byte(output))
+}
