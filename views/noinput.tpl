@@ -23,7 +23,7 @@
 <body>
 <section>
     <div class="searchbar">
-        <form action="/get" method="GET">
+        <form action="get" method="GET">
             <div id="searchform">
                 <input type="text" class="input" name="channelname" placeholder="Channel" autofocus>
                 <!-- errors will go here -->
@@ -38,6 +38,6 @@
 </section>
 </body>
 <footer>
-    <p>Built by <a href="https://github.com/equoia">Sequoia</a> | Version: twitchaudio<a href="https://github.com/equoia/twitchtvaudio/commits/master">{{.Version}}</a></p>
+    <p>Built by <a href="https://github.com/equoia">Sequoia</a> | Version: twitchaudio<a href="https://github.com/equoia/twitchtvaudio/commits/master">{{.version}}</a></p>
 </footer>
 </html>
