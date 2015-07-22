@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
 <html>
-<head>
+<head id="head">
     <title>Twitch audio-only</title>
     <link rel="stylesheet" href="css/foo.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="refresh" content="0; url=https://letr.it/twitchaudio/stream/{{.channel}}.m3u8" />
     <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -16,6 +16,16 @@
         ga('create', 'UA-38997729-5', 'auto');
         ga('send', 'pageview');
 
+    </script>
+    <script>
+        var iOS = ( navigator.userAgent.match(/iPad|iPhone|iPod/g) ? true : false );
+        var Mac = ( navigator.userAgent.match(/Macintosh/g) ? true : false );
+        if (iOS || Mac) {
+            console.log("Apple device detected, switching to original M3U8 URL due to issues with the modified URL");
+            $('head').append('<meta http-equiv="refresh" content="0; url={{.resulturl}}" />');
+        } else {
+            $('head').append('<meta http-equiv="refresh" content="0; url=https://letr.it/twitchaudio/stream/{{.channel}}.m3u8" />');
+        }
     </script>
 </head>
 <header>
