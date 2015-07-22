@@ -7,6 +7,9 @@ import (
 	"github.com/GeertJohan/go.rice"
 	"html/template"
 	"github.com/gorilla/mux"
+	"log"
+	"io/ioutil"
+	"regexp"
 )
 
 var Version string
@@ -50,6 +53,7 @@ func GetChannel(w http.ResponseWriter, r *http.Request) {
 	ctx["version"] = Version
 
 	lowercasedchannelname := strings.ToLower(vars["channelname"])
+	ctx["channel"] = lowercasedchannelname
 	statuscode, url := retrieveaudio.Get(lowercasedchannelname)
 	if statuscode == 0 {
 		ctx["channelresult"] = 0
@@ -94,6 +98,7 @@ func GetChannelAlternative(w http.ResponseWriter, r *http.Request) {
 	ctx["version"] = Version
 
 	lowercasedchannelname := strings.ToLower(channelname)
+	ctx["channel"] = lowercasedchannelname
 	statuscode, url := retrieveaudio.Get(lowercasedchannelname)
 	if statuscode == 0 {
 		ctx["channelresult"] = 0
@@ -122,5 +127,56 @@ func GetChannelAlternative(w http.ResponseWriter, r *http.Request) {
 		}
 
 		htmlTemplate.Execute(w, ctx)
+	}
+}
+
+func GetM3U8andRewrite(w http.ResponseWriter, r *http.Request) {
+	// Dirty CORS workaround, does not work too well right now
+	// because CORS is also being applied to the .ts files
+	// found in the .m3u8
+
+	vars := mux.Vars(r)
+
+	lowercasedchannelname := strings.ToLower(vars["channelname"])
+	statuscode, url := retrieveaudio.Get(lowercasedchannelname)
+	if statuscode == 0 {
+		w.WriteHeader(404)
+		w.Write([]byte("Stream not found."))
+	} else if statuscode == 1 {
+		cli := http.DefaultClient
+		req, err := http.NewRequest("GET", url, nil)
+		if err != nil {
+			w.WriteHeader(400)
+			w.Write([]byte("Something went wrong, contact developer at @equoia"))
+			log.Println(err)
+		}
+		req.Header.Set("User-Agent", "letr.it/twitchaudio 1.0")
+
+		resp, err := cli.Do(req)
+		if err != nil {
+			log.Println("Looks like something went wrong with the request:\n", err)
+		}
+		defer resp.Body.Close()
+		tmpbody, err := ioutil.ReadAll(resp.Body)
+		if err != nil {
+			log.Println(err)
+		}
+		lines := strings.Split(string(tmpbody), "\n")
+		r := regexp.MustCompile(`(.*ttvnw.net\/.*\/audio_only\/)`)
+
+		vodfileEndpoint := r.FindStringSubmatch(url)[1]
+
+		for i, line := range lines {
+			if strings.Contains(line, "index") {
+				lines[i] = vodfileEndpoint + line
+			}
+		}
+
+		output := strings.Join(lines, "\n")
+
+		w.Header().Set("Content-Type", "application/vnd.apple.mpegurl")
+		w.WriteHeader(200)
+		w.Write([]byte(output))
+
 	}
 }

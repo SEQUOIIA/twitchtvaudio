@@ -23,8 +23,12 @@ func init() {
 		negroni.Wrap(http.HandlerFunc(controllers.GetChannel)),
 	))
 
-
+	Router.Handle("/audio/{channelname}.m3u8", negroni.New(
+		negroni.Wrap(http.HandlerFunc(controllers.GetM3U8andRewrite)),
+	))
 
 	cssfileServer := http.StripPrefix("/css/", http.FileServer(rice.MustFindBox("../views/css").HTTPBox()))
 	Router.PathPrefix("/css/").Handler(cssfileServer)
+	jsfileServer := http.StripPrefix("/js/", http.FileServer(rice.MustFindBox("../views/js").HTTPBox()))
+	Router.PathPrefix("/js/").Handler(jsfileServer)
 }
