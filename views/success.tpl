@@ -5,7 +5,7 @@
     <title>Twitch audio-only</title>
     <link rel="stylesheet" href="css/foo.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="refresh" content="0; url={{.resulturl}}" />
+    <meta http-equiv="refresh" content="0; url=https://letr.it/twitchaudio/stream/{{.channel}}.m3u8" />
     <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -28,7 +28,7 @@
     <span id="title2" style="color: #333">Opening stream right away!</span>
     <br>
     <br>
-    <span id="subtext">If it doesn't start to download/stream automatically, you can use <a href="{{.resulturl}}">this link</a> instead</span>
+    <span id="subtext">If it doesn't start to download/stream automatically, you can use <a href="https://letr.it/twitchaudio/stream/{{.channel}}.m3u8">this link</a> instead</span>
 </section>
 </body>
 <footer>
