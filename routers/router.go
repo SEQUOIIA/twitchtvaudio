@@ -55,7 +55,7 @@ func init() {
 		jspath = "/js/"
 	} else {
 		csspath = subpath + "/css/"
-		jspath = "/js/"
+		jspath = subpath + "/js/"
 	}
 
 	cssfileServer := http.StripPrefix(csspath, http.FileServer(rice.MustFindBox("../views/css").HTTPBox()))
