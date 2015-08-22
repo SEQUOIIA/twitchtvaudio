@@ -24,7 +24,7 @@
             console.log("Apple device detected, switching to original M3U8 URL due to issues with the modified URL");
             $('head').append('<meta http-equiv="refresh" content="0; url={{.resulturl}}" />');
         } else {
-            $('head').append('<meta http-equiv="refresh" content="0; url=https://letr.it/twitchaudio/stream/{{.channel}}.m3u8" />');
+            $('head').append('<meta http-equiv="refresh" content="0; url=/stream/{{.channel}}.m3u8" />');
         }
     </script>
 </head>
