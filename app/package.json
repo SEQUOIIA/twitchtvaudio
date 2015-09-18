@@ -1,0 +1,29 @@
+{
+  "name": "twitchaudioonlyretriever",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.4.3",
+    "browserify": "^11.1.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.0.4",
+    "react-router": "^1.0.0-rc1",
+    "reactify": "^1.1.1",
+    "jsx-loader": "^0.13.2",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.4.0",
+    "sassify": "^0.9.1",
+    "react": "^0.13.3",
+    "webpack": "^1.12.2",
+    "gulp-react-bundle": "^0.1.11",
+    "webpack-dev-server": "^1.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
