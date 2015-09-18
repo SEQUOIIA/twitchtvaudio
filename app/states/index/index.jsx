@@ -1,4 +1,4 @@
-
+var Link = ReactRouter.Link
 
 var HomeHeaderComponent = React.createClass({
    render: function() {
@@ -81,6 +81,17 @@ var InputBar = React.createClass({
    }
 });
 
+var indexPage = React.createClass({
+    render() {
+        return (
+            <div id="app">
+                <HomeHeaderComponent title='Twitch audio-only retriever' />
+                <HomeContentComponent />
+            </div>
+        )
+    }
+});
+
 
 var Route = ReactRouter.Route;
 var Router = ReactRouter.Router;
@@ -91,7 +102,7 @@ var RouteHandler = ReactRouter.RouteHandler;
 
 React.render((
     <Router>
-        <Route path="/" component={HomeContentComponent}>
+        <Route path="/" component={indexPage}>
             <Route path="reset" component={HomeContentComponent} />
         </Route>
     </Router>
