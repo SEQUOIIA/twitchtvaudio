@@ -1,0 +1,128 @@
+@import "../bourbon/bourbon";
+@import "../neat/neat";
+@import url(../reset.css);
+
+h1 {
+  font-weight: 100;
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.title {
+  text-decoration: none;
+  color: #ffffff;
+  transition: all 0.5s ease 0s;
+}
+
+.fa-times {
+  color: #ffbb0f;
+  &:hover {
+    color: #ff8a40;
+  }
+}
+
+section {
+  /*
+  width: auto;
+  max-width: 100%;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  */
+  @include outer-container(100%);
+  margin-top: 1.5em;
+}
+
+body {
+  background-color: #f8f8f8;
+}
+
+#home {
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  .headerTitle {
+    margin-top: 1.3em;
+
+    .logo {
+      text-align: center;
+      font-size: 5rem;
+      font-weight: 700;
+      color: #454545;
+      padding-bottom: 1%;
+    }
+
+    .subTitle {
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #454545;
+    }
+
+    .seperator {
+      @include display(flex);
+      @include justify-content(center);
+      width: 50%;
+      height: 0.1em;
+      font-size: 2em;
+      padding-top: 0.5%;
+      margin-bottom: 1%;
+      background-color: transparent;
+      border-width: medium medium 3px;
+      border-style: none none solid;
+      border-top: medium none;
+      border-right: medium none;
+      border-left: medium none;
+      border-radius: 0px;
+      color: #4e4e4e;
+      outline: medium none;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .content {
+    h2 {
+      text-align: center;
+      font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #454545;
+    }
+
+    .inputBar {
+      @include display(flex);
+      @include justify-content(center);
+      margin-top: 0.7em;
+      .input {
+        background-color: #ebebeb;
+        width: 23em;
+        height: 2.3em;
+        text-align: center;
+        font-size: 0.8em;
+        border: hidden;
+      }
+    }
+
+    .downloadButton {
+      margin-top: 0.8em;
+      margin-left: auto;
+      margin-right: auto;
+      width: 7em;
+      @include display(block);
+      background-color: #aa61c8;
+      color: #7b4491;
+      border: hidden;
+      font-family: "Open Sans", "Helvetica Neue", sans-serif;
+      font-weight: 700;
+      font-size: 1.3em;
+
+      &:hover {
+        background-color: #cc74f0;
+        color: #9854b3;
+        cursor: pointer;
+      }
+    }
+  }
+}
