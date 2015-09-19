@@ -1,3 +1,5 @@
+import React from 'react';
+
 var VodHeaderComponent = React.createClass({
    render: function() {
        return (

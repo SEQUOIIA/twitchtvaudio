@@ -1,4 +1,5 @@
-var Link = ReactRouter.Link
+import React from 'react';
+import {Router, Link} from 'react-router';
 
 var HomeHeaderComponent = React.createClass({
    render: function() {
@@ -132,11 +133,7 @@ var streamPage = React.createClass({
 })
 
 
-var Route = ReactRouter.Route;
-var Router = ReactRouter.Router;
-var DefaultRoute = ReactRouter.DefaultRoute;
-var RouteHandler = ReactRouter.RouteHandler;
-
+/*var createBrowserHistory = ReactRouter.createBrowserHistory;
 
 
 React.render((
@@ -148,15 +145,7 @@ React.render((
     </Router>
 ), document.body)
 
-
-/*
-React.render(
-    <HomeHeaderComponent title='Twitch audio-only retriever' />,
-    document.getElementById('header')
-);
-
-React.render(
-    <HomeContentComponent />,
-    document.getElementById('content')
-);
 */
+module.exports.app = app;
+module.exports.indexPage = indexPage;
+module.exports.streamPage = streamPage;
