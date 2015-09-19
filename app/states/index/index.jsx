@@ -44,7 +44,7 @@ var HomeContentComponent = React.createClass({
                <h2>Enter URL</h2>
                <InputBar vodurl={this.state.vodurl} onUpdate={this.onUpdate} />
                <button type="submit" form="vodLookup" value="submit" className="downloadButton">LISTEN</button>
-               <Link to="/reset">Reset</Link>
+               {/* <Link query={{Streamer: "twitchchannel"}} to={`/stream`}>Reset</Link> */}
            </div>
        );
    }
@@ -62,10 +62,7 @@ var InputBar = React.createClass({
 
         this.props.onUpdate(vodUrl);
 
-        React.render(
-            <HomeHeaderComponent title='Nopelol' />,
-            document.getElementById('header')
-        );
+        window.location = "#/stream?Streamer=" + vodUrl;
     },
 
     componentDidMount: function(){
@@ -81,16 +78,58 @@ var InputBar = React.createClass({
    }
 });
 
-var indexPage = React.createClass({
+var app = React.createClass({
     render() {
         return (
             <div id="app">
-                <HomeHeaderComponent title='Twitch audio-only retriever' />
-                <HomeContentComponent />
+                {this.props.children}
             </div>
         )
     }
 });
+
+var indexPage = React.createClass({
+   render: function() {
+       return (
+           <div>
+               <HomeHeaderComponent title='Twitch audio-only retriever' />
+               <HomeContentComponent />
+           </div>
+       )
+   }
+});
+
+var streamPage = React.createClass({
+    componentDidMount: function() {
+    },
+
+    getInitialState: function() {
+        return {
+            streamer: this.props.location.query.Streamer
+        }
+    },
+
+
+
+    render: function() {
+        var query = this.props.location.query;
+
+        return (
+            <div className="headerTitle">
+                <div className="logo">Loading...</div>
+                <div className="seperator"></div>
+                <br />
+                    <div style={{textAlign: 'center'}}>Checking if <span style={{fontWeight: 700}}>{this.state.streamer}</span> is streaming. </div>
+                    <div className="spinner">
+                        <div className="double-bounce1"></div>
+                        <div className="double-bounce2"></div>
+                    </div>
+                <br/>
+                <Link to="/">Frontpage</Link>
+            </div>
+        )
+    }
+})
 
 
 var Route = ReactRouter.Route;
@@ -102,11 +141,13 @@ var RouteHandler = ReactRouter.RouteHandler;
 
 React.render((
     <Router>
-        <Route path="/" component={indexPage}>
-            <Route path="reset" component={HomeContentComponent} />
+        <Route path="/" component={app}>
+            <ReactRouter.IndexRoute component={indexPage} />
+            <Route path="stream" component={streamPage} />
         </Route>
     </Router>
 ), document.body)
+
 
 /*
 React.render(
