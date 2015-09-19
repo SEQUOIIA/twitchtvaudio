@@ -1,5 +1,5 @@
 var Indexfile = require('./states/index/index.jsx');
-var Vodfile = require('./states/index/vod.jsx');
+var Streamfile = require('./states/index/stream.jsx');
 
 
 import React from 'react';
@@ -12,7 +12,7 @@ React.render((
     <Router history={createHashHistory({queryKey: false})}>
         <Route path="/" component={Indexfile.app}>
             <IndexRoute component={Indexfile.indexPage} />
-            <Route path="stream" component={Indexfile.streamPage} />
+            <Route path="stream" component={Streamfile.streamPage} />
         </Route>
     </Router>
 ), document.body)
