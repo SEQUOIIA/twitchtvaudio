@@ -41,7 +41,7 @@ var StreamErrorComponent = React.createClass({
                 {profileicon}
                 <div style={{textAlign: 'center'}}><span style={{fontWeight: 700}}>{this.props.streamer}</span> seems to be offline.</div>
                 <br />
-                <a href="/">New search</a>
+                <a href="#/" style={{textDecoration: 'none'}}><button type="button" form="vodLookup" value="submit" className="genericButton">NEW SEARCH</button></a>
                 {/*<Link to="/">Frontpage</Link>*/}
             </div>
         )

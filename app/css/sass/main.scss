@@ -127,6 +127,27 @@ body {
   }
 }
 
+.genericButton {
+  margin-top: 0.8em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 8em;
+  text-decoration: none;
+  @include display(block);
+  background-color: #aa61c8;
+  color: #7b4491;
+  border: hidden;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  font-size: 1.3em;
+
+  &:hover {
+    background-color: #cc74f0;
+    color: #9854b3;
+    cursor: pointer;
+  }
+}
+
 .profileicon {
   border: 2px solid #757575;
   -webkit-border-radius: 200px;
