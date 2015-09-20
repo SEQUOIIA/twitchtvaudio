@@ -49,6 +49,35 @@ var StreamErrorComponent = React.createClass({
     }
 });
 
+var StreamSuccessComponent = React.createClass({
+   componentDidMount: function() {
+       setTimeout(function() {
+           window.open(this.props.hls, '_blank');
+       }.bind(this), 2000);
+   },
+
+   render: function() {
+       var profileicon;
+       if (this.props.profileicon) {
+           profileicon = <div className="contentloading"><img className="profileicon" style={{border: '2px solid #92D62B'}} src={this.props.profileicon} /></div>;
+       }
+       return (
+           <div className="headerTitle genericFadeIn">
+               {/*<meta httpEquiv="refresh" content={"2; url=" + this.props.hls} /> */}
+               <div className="seperator"></div>
+               <br />
+               {profileicon}
+               <div style={{textAlign: 'center'}}><span style={{fontWeight: 700}}>{this.props.streamer}</span> is live!</div>
+               <br />
+               <div style={{textAlign: 'center'}}>Opening the audio stream in a new tab</div>
+               <div style={{textAlign: 'center', fontSize: 'smaller'}}>Enable pop-ups for this site, if you haven't already.</div>
+               <br />
+               <a href="#/" style={{textDecoration: 'none'}}><button type="button" form="vodLookup" value="submit" className="genericButton">NEW SEARCH</button></a>
+           </div>
+       )
+   }
+});
+
 var streamPage = React.createClass({
     componentDidMount: function() {
         this.getProfile();
@@ -61,7 +90,8 @@ var streamPage = React.createClass({
             error: false,
             loadingstatus: false,
             apiProfile: {},
-            profileloadedStatus: false
+            profileloadedStatus: false,
+            hlsStream: ''
         }
     },
 
@@ -73,47 +103,37 @@ var streamPage = React.createClass({
             if (request.status >= 200 && request.status < 400) {
                 var data = JSON.parse(request.responseText);
                 if (data.stream) {
-                    console.log('Stream is live!');
+                    //console.log('Stream is live!');
 
-                    /*
-                    $.ajax({
-                        url: 'https://api.twitch.tv/api/channels/' + this.state.streamer + '/access_token',
-                        dataType: 'json',
-                        success: function(tmpdata){
-                            console.log(tmpdata);
+                    var m3u8request = new XMLHttpRequest();
+                    m3u8request.open('GET', 'http://twitchaudio.seq.tf:8089/api/stream/' + this.state.streamer, true);
+                    m3u8request.onload = function() {
+                        if (m3u8request.status >= 200 && m3u8request.status < 400) {
+                            var data = JSON.parse(m3u8request.responseText);
+
+                            setTimeout(function() {
+                                this.setState({
+                                    loadingstatus: true,
+                                    error: false,
+                                    hlsStream: data.url
+                                });
+                            }.bind(this), 1300);
+                        } else {
+                            //console.log('Stream is not live.');
+                            setTimeout(function() {
+                                this.setState({
+                                    loadingstatus: true,
+                                    error: true
+                                });
+                            }.bind(this), 1300);
                         }
-                    });
-                    */
-                    var streamer = this.state.streamer;
-                    $.getJSON("http://query.yahooapis.com/v1/public/yql",
-                        {
-                            q: "select * from json where url=\"https://api.twitch.tv/api/channels/" + this.state.streamer + "/access_token\"",
-                            format: "json"
-                        },
-                        function(tmpdata){
-                            var result = tmpdata.query.results.json;
-                            console.log(result);
-                            var m3u8url = ("http://usher.twitch.tv/api/channel/hls/" + streamer + ".m3u8?sig=" + result.sig + "&token=" + result.token + "&allow_source=true&allow_audio_only=true");
+                    }.bind(this);
 
-                            var request = new XMLHttpRequest();
-                            request.open('GET', m3u8url + "&callback=foo", true);
+                    m3u8request.onerror = function() {
+                        console.log('request error');
+                    };
 
-                            request.onload = function() {
-                                if (request.status >= 200 && request.status < 400) {
-                                    var data = request.responseText;
-                                    console.log(data);
-                                } else {
-                                    console.log('API request failed.')
-                                }
-                            }.bind(this);
-
-                            request.onerror = function() {
-                                console.log('request error');
-                            };
-
-                            request.send();
-                        }
-                    );
+                    m3u8request.send();
                 } else {
                     console.log('Stream is not live.');
                     setTimeout(function() {
@@ -171,6 +191,11 @@ var streamPage = React.createClass({
                 }
             } else {
                 // TODO: Loading is successful.
+                if (this.state.profileloadedStatus) {
+                    content = <StreamSuccessComponent streamer={this.state.streamer} profileicon={this.state.apiProfile.logo} hls={this.state.hlsStream} />;
+                } else {
+                    content = <StreamSuccessComponent streamer={this.state.streamer} hls={this.state.hlsStream} />;
+                }
             }
         } else {
             if (this.state.profileloadedStatus) {

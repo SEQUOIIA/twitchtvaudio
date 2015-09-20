@@ -48,7 +48,6 @@ var InputBar = React.createClass({
         if (!vodUrl) {
             return
         }
-        console.log(vodUrl);
         React.findDOMNode(this.refs.vodurl).value = '';
 
         this.props.onUpdate(vodUrl);
