@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'react-router';
 
+
 var StreamLoadingComponent = React.createClass({
     render: function() {
         var profileicon;
@@ -73,6 +74,46 @@ var streamPage = React.createClass({
                 var data = JSON.parse(request.responseText);
                 if (data.stream) {
                     console.log('Stream is live!');
+
+                    /*
+                    $.ajax({
+                        url: 'https://api.twitch.tv/api/channels/' + this.state.streamer + '/access_token',
+                        dataType: 'json',
+                        success: function(tmpdata){
+                            console.log(tmpdata);
+                        }
+                    });
+                    */
+                    var streamer = this.state.streamer;
+                    $.getJSON("http://query.yahooapis.com/v1/public/yql",
+                        {
+                            q: "select * from json where url=\"https://api.twitch.tv/api/channels/" + this.state.streamer + "/access_token\"",
+                            format: "json"
+                        },
+                        function(tmpdata){
+                            var result = tmpdata.query.results.json;
+                            console.log(result);
+                            var m3u8url = ("http://usher.twitch.tv/api/channel/hls/" + streamer + ".m3u8?sig=" + result.sig + "&token=" + result.token + "&allow_source=true&allow_audio_only=true");
+
+                            var request = new XMLHttpRequest();
+                            request.open('GET', m3u8url + "&callback=foo", true);
+
+                            request.onload = function() {
+                                if (request.status >= 200 && request.status < 400) {
+                                    var data = request.responseText;
+                                    console.log(data);
+                                } else {
+                                    console.log('API request failed.')
+                                }
+                            }.bind(this);
+
+                            request.onerror = function() {
+                                console.log('request error');
+                            };
+
+                            request.send();
+                        }
+                    );
                 } else {
                     console.log('Stream is not live.');
                     setTimeout(function() {
