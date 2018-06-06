@@ -1,1 +1,3 @@
-views/css/* linguist-vendored
+*.css linguist-vendored
+*.sass
+*.scss
